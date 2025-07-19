@@ -80,14 +80,14 @@ const Dashboard: React.FC = () => {
         {stats.map((stat, index) => {
           const Icon = stat.icon;
           return (
-            <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-lg transition-all duration-300 hover:scale-105">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium text-gray-600">{stat.title}</p>
                   <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
-                  <p className="text-sm text-green-600">{stat.change} from last month</p>
+                  <p className="text-sm text-green-600 font-medium">{stat.change} from last month</p>
                 </div>
-                <div className={`p-3 rounded-lg ${stat.bgColor}`}>
+                <div className={`p-3 rounded-lg ${stat.bgColor} transition-transform duration-300 hover:scale-110`}>
                   <Icon className={`h-6 w-6 ${stat.color}`} />
                 </div>
               </div>
@@ -106,14 +106,14 @@ const Dashboard: React.FC = () => {
               <Link
                 key={index}
                 to={action.path}
-                className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-lg transition-shadow duration-200"
+                className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-xl transition-all duration-300 hover:scale-105 group"
               >
                 <div className="flex items-center space-x-4">
-                  <div className={`p-3 rounded-lg ${action.color} text-white`}>
+                  <div className={`p-3 rounded-lg ${action.color} text-white transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg`}>
                     <Icon className="h-6 w-6" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900">{action.title}</h3>
+                    <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">{action.title}</h3>
                     <p className="text-gray-600">{action.description}</p>
                   </div>
                 </div>
@@ -126,7 +126,7 @@ const Dashboard: React.FC = () => {
       {/* Recent Activity */}
       <div>
         <h2 className="text-2xl font-bold text-gray-900 mb-6">Recent Activity</h2>
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-lg transition-shadow duration-300">
           <div className="space-y-4">
             {[
               { type: 'text', result: 'fake', confidence: 0.85, time: '2 minutes ago' },
@@ -134,9 +134,9 @@ const Dashboard: React.FC = () => {
               { type: 'text', result: 'real', confidence: 0.92, time: '10 minutes ago' },
               { type: 'image', result: 'real', confidence: 0.88, time: '15 minutes ago' }
             ].map((activity, index) => (
-              <div key={index} className="flex items-center justify-between py-3 border-b border-gray-100 last:border-b-0">
+              <div key={index} className="flex items-center justify-between py-3 border-b border-gray-100 last:border-b-0 hover:bg-gray-50 rounded-lg px-3 transition-colors duration-200">
                 <div className="flex items-center space-x-3">
-                  <div className={`p-2 rounded-lg ${
+                  <div className={`p-2 rounded-lg transition-all duration-300 hover:scale-110 ${
                     activity.result === 'fake' || activity.result === 'deepfake' 
                       ? 'bg-red-100 text-red-600' 
                       : 'bg-green-100 text-green-600'
@@ -148,11 +148,15 @@ const Dashboard: React.FC = () => {
                       {activity.type === 'text' ? 'Text Analysis' : 'Image Analysis'}
                     </p>
                     <p className="text-sm text-gray-600">
-                      Detected as {activity.result} ({Math.round(activity.confidence * 100)}% confidence)
+                      Detected as <span className={`font-semibold ${
+                        activity.result === 'fake' || activity.result === 'deepfake' 
+                          ? 'text-red-600' 
+                          : 'text-green-600'
+                      }`}>{activity.result}</span> ({Math.round(activity.confidence * 100)}% confidence)
                     </p>
                   </div>
                 </div>
-                <span className="text-sm text-gray-500">{activity.time}</span>
+                <span className="text-sm text-gray-500 font-medium">{activity.time}</span>
               </div>
             ))}
           </div>
