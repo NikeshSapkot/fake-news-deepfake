@@ -18,13 +18,29 @@ const Footer: React.FC = () => {
               Empowering users to make informed decisions about digital content.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a 
+                href="https://github.com/NikeshSapkot" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="GitHub Profile"
+              >
                 <Github className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a 
+                href="https://linkedin.com/in/nikeshsapkota" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="LinkedIn Profile"
+              >
                 <Linkedin className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
+              <a 
+                href="mailto:contact@nikeshsapkota.com" 
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="Email Contact"
+              >
                 <Mail className="h-5 w-5" />
               </a>
             </div>

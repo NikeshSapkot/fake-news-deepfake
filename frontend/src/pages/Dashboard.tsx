@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Shield, FileText, Image, BarChart3, TrendingUp, AlertTriangle, CheckCircle } from 'lucide-react';
+import { Shield, FileText, Image, BarChart3, AlertTriangle, CheckCircle } from 'lucide-react';
 
 const Dashboard: React.FC = () => {
   const stats = [

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FileText, Send, AlertTriangle, CheckCircle } from 'lucide-react';
+import { Send, AlertTriangle, CheckCircle } from 'lucide-react';
 
 const TextDetection: React.FC = () => {
   const [text, setText] = useState('');
