@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { Shield, FileText, Image, BarChart3, Info } from 'lucide-react';
 
 const Header: React.FC = () => {
@@ -19,7 +18,7 @@ const Header: React.FC = () => {
       <div className="w-full max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-2">
-            <Shield className="h-8 w-8 text-primary-600" />
+            <Shield className="h-8 w-8 text-blue-600" />
             <span className="text-xl font-bold text-gray-900">
               Fake News & Deepfake Detector
             </span>
@@ -36,20 +35,12 @@ const Header: React.FC = () => {
                   to={item.path}
                   className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
                     isActive
-                      ? 'bg-primary-100 text-primary-700'
+                      ? 'bg-blue-100 text-blue-700'
                       : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
                   }`}
                 >
                   <Icon className="h-4 w-4" />
                   <span>{item.label}</span>
-                  {isActive && (
-                    <motion.div
-                      layoutId="activeTab"
-                      className="absolute inset-0 bg-primary-100 rounded-lg"
-                      initial={false}
-                      transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                    />
-                  )}
                 </Link>
               );
             })}

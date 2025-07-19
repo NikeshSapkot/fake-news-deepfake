@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Shield, FileText, Image, BarChart3, AlertTriangle, CheckCircle } from 'lucide-react';
 
@@ -81,7 +80,7 @@ const Dashboard: React.FC = () => {
         {stats.map((stat, index) => {
           const Icon = stat.icon;
           return (
-            <div key={index} className="card">
+            <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium text-gray-600">{stat.title}</p>
@@ -107,10 +106,10 @@ const Dashboard: React.FC = () => {
               <Link
                 key={index}
                 to={action.path}
-                className="card hover:shadow-lg transition-shadow duration-200 group"
+                className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-lg transition-shadow duration-200"
               >
                 <div className="flex items-center space-x-4">
-                  <div className={`p-3 rounded-lg ${action.color} text-white group-hover:scale-110 transition-transform duration-200`}>
+                  <div className={`p-3 rounded-lg ${action.color} text-white`}>
                     <Icon className="h-6 w-6" />
                   </div>
                   <div>
@@ -127,7 +126,7 @@ const Dashboard: React.FC = () => {
       {/* Recent Activity */}
       <div>
         <h2 className="text-2xl font-bold text-gray-900 mb-6">Recent Activity</h2>
-        <div className="card">
+        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
           <div className="space-y-4">
             {[
               { type: 'text', result: 'fake', confidence: 0.85, time: '2 minutes ago' },
