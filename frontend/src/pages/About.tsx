@@ -170,11 +170,37 @@ const About: React.FC = () => {
         </div>
       </motion.div>
 
-      {/* Contact/Info */}
+      {/* Developer Info */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}
+        className="card bg-gradient-to-r from-blue-50 to-indigo-50"
+      >
+        <div className="text-center">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">About the Developer</h2>
+          <div className="flex items-center justify-center mb-4">
+            <div className="w-20 h-20 bg-primary-600 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+              NS
+            </div>
+          </div>
+          <h3 className="text-xl font-semibold text-gray-900 mb-2">nikeshsapkota</h3>
+          <p className="text-gray-600 mb-4">
+            A passionate developer focused on AI/ML applications and combating misinformation through technology.
+          </p>
+          <div className="flex justify-center space-x-4 text-sm text-gray-500">
+            <span>• Full Stack Developer</span>
+            <span>• AI/ML Enthusiast</span>
+            <span>• Open Source Contributor</span>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Contact/Info */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.6 }}
         className="card bg-gray-50"
       >
         <div className="text-center">
