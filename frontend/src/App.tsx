@@ -15,7 +15,7 @@ const App: React.FC = () => {
     <ErrorBoundary>
       <div className="min-h-screen bg-gray-50 flex flex-col">
         <Header />
-        <main className="container mx-auto px-4 py-8 flex-grow">
+        <main className="w-full max-w-7xl mx-auto px-4 py-8 flex-grow">
           <Suspense fallback={
             <div className="flex items-center justify-center h-64">
               <div className="loading-spinner"></div>

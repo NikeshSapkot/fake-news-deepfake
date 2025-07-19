@@ -5,7 +5,7 @@ import { Shield, Github, Linkedin, Mail } from 'lucide-react';
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-900 text-white mt-16">
-      <div className="container mx-auto px-4 py-12">
+      <div className="w-full max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="col-span-1 md:col-span-2">
