@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Shield, Brain, Eye, Zap, Users, Globe } from 'lucide-react';
 
 const About: React.FC = () => {
@@ -48,92 +47,65 @@ const About: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto space-y-12">
       {/* Hero Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-center"
-      >
+      <div className="text-center">
         <h1 className="text-4xl font-bold text-gray-900 mb-6">About Our Project</h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
           We're building the future of content verification with AI-powered fake news and deepfake detection.
           Our mission is to combat misinformation and promote digital literacy.
         </p>
-      </motion.div>
+      </div>
 
       {/* Mission Statement */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        className="card bg-gradient-to-r from-primary-50 to-blue-50"
-      >
+      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl shadow-sm border border-gray-200 p-6">
         <div className="text-center">
-          <Shield className="h-12 w-12 text-primary-600 mx-auto mb-4" />
+          <Shield className="h-12 w-12 text-blue-600 mx-auto mb-4" />
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h2>
           <p className="text-lg text-gray-700 leading-relaxed">
             To provide accessible, accurate, and transparent tools for detecting fake news and deepfakes, 
             empowering users to make informed decisions about the content they consume and share online.
           </p>
         </div>
-      </motion.div>
+      </div>
 
       {/* Features Grid */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
+      <div>
         <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">Key Features</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
-                className="card text-center hover:shadow-lg transition-shadow duration-200"
+                className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 text-center hover:shadow-lg transition-shadow duration-200"
               >
-                <Icon className="h-8 w-8 text-primary-600 mx-auto mb-4" />
+                <Icon className="h-8 w-8 text-blue-600 mx-auto mb-4" />
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
-              </motion.div>
+              </div>
             );
           })}
         </div>
-      </motion.div>
+      </div>
 
       {/* Technology Stack */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-        className="card"
-      >
+      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
         <h2 className="text-2xl font-bold text-gray-900 mb-6">Technology Stack</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {technologies.map((tech, index) => (
             <div key={index} className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-              <div className="w-2 h-2 bg-primary-600 rounded-full"></div>
+              <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
               <span className="text-gray-700">{tech}</span>
             </div>
           ))}
         </div>
-      </motion.div>
+      </div>
 
       {/* How It Works */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-        className="card"
-      >
+      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
         <h2 className="text-2xl font-bold text-gray-900 mb-6">How It Works</h2>
         <div className="space-y-6">
           <div className="flex items-start space-x-4">
-            <div className="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold">
+            <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
               1
             </div>
             <div>
@@ -145,7 +117,7 @@ const About: React.FC = () => {
           </div>
           
           <div className="flex items-start space-x-4">
-            <div className="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold">
+            <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
               2
             </div>
             <div>
@@ -157,7 +129,7 @@ const About: React.FC = () => {
           </div>
           
           <div className="flex items-start space-x-4">
-            <div className="flex-shrink-0 w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold">
+            <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold">
               3
             </div>
             <div>
@@ -168,41 +140,48 @@ const About: React.FC = () => {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Developer Info */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
-        className="card bg-gradient-to-r from-blue-50 to-indigo-50"
-      >
+      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl shadow-sm border border-gray-200 p-6">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">About the Developer</h2>
           <div className="flex items-center justify-center mb-4">
-            <div className="w-20 h-20 bg-primary-600 rounded-full flex items-center justify-center text-white text-2xl font-bold">
+            <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center text-white text-2xl font-bold">
               NS
             </div>
           </div>
-          <h3 className="text-xl font-semibold text-gray-900 mb-2">nikeshsapkota</h3>
-          <p className="text-gray-600 mb-4">
-            A passionate developer focused on AI/ML applications and combating misinformation through technology.
+          <h3 className="text-xl font-semibold text-gray-900 mb-2">Nikesh Sapkota</h3>
+          <p className="text-gray-600 mb-4 max-w-3xl mx-auto leading-relaxed">
+            A passionate developer with a strong interest in Machine Learning, AI, and full-stack web development. 
+            I specialize in building responsive, modern web applications using React, Tailwind CSS, and rich UI animations. 
+            On the backend, I work with Node.js and Express.js to create robust APIs and scalable architectures.
           </p>
-          <div className="flex justify-center space-x-4 text-sm text-gray-500">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-500 mb-6">
             <span>• Full Stack Developer</span>
+            <span>• Machine Learning Engineer</span>
             <span>• AI/ML Enthusiast</span>
-            <span>• Open Source Contributor</span>
           </div>
+          
+          <div className="bg-white rounded-lg p-4 mb-6">
+            <h4 className="font-semibold text-gray-900 mb-3">Notable Projects:</h4>
+            <ul className="text-left space-y-2 text-gray-600">
+              <li>• Cancer detection system using machine learning</li>
+              <li>• Mental health analysis platform using NLP and BERT</li>
+              <li>• Food management system for restaurants</li>
+              <li>• Fake News & Deepfake Detection (Current Project)</li>
+            </ul>
+          </div>
+          
+          <p className="text-gray-600 italic">
+            "I enjoy blending functionality with elegant design, focusing on clean, minimalist interfaces with powerful features. 
+            I'm continuously exploring new technologies and love solving real-world problems through code."
+          </p>
         </div>
-      </motion.div>
+      </div>
 
       {/* Contact/Info */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.6 }}
-        className="card bg-gray-50"
-      >
+      <div className="bg-gray-50 rounded-xl shadow-sm border border-gray-200 p-6">
         <div className="text-center">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Get Started</h2>
           <p className="text-gray-600 mb-6">
@@ -217,7 +196,7 @@ const About: React.FC = () => {
             </button>
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };

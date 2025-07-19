@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
                 <Linkedin className="h-5 w-5" />
               </a>
               <a 
-                href="mailto:contact@nikeshsapkota.com" 
+                href="mailto:nikesh.sapkota@example.com" 
                 className="text-gray-400 hover:text-white transition-colors"
                 aria-label="Email Contact"
               >
@@ -82,9 +82,9 @@ const Footer: React.FC = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact</h3>
             <ul className="space-y-2 text-gray-300">
-              <li>Email: contact@example.com</li>
-              <li>GitHub: github.com/username</li>
-              <li>LinkedIn: linkedin.com/in/username</li>
+              <li>Email: nikesh.sapkota@example.com</li>
+              <li>GitHub: github.com/NikeshSapkot</li>
+              <li>LinkedIn: linkedin.com/in/nikeshsapkota</li>
             </ul>
           </div>
         </div>
