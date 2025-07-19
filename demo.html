@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News & Deepfake Detection System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
+                        <i data-lucide="shield-check" class="w-6 h-6 text-purple-600"></i>
+                    </div>
+                    <h1 class="text-2xl font-bold">Fake News & Deepfake Detector</h1>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#dashboard" class="hover:text-purple-200 transition-colors">Dashboard</a>
+                    <a href="#text" class="hover:text-purple-200 transition-colors">Text Analysis</a>
+                    <a href="#image" class="hover:text-purple-200 transition-colors">Image Analysis</a>
+                    <a href="#reports" class="hover:text-purple-200 transition-colors">Reports</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-8">
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8">Dashboard</h2>
+            
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white rounded-xl shadow-md p-6 card-hover">
+                    <div class="flex items-center">
+                        <div class="p-3 rounded-full bg-blue-100">
+                            <i data-lucide="file-text" class="w-6 h-6 text-blue-600"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-600">Total Analyses</p>
+                            <p class="text-2xl font-bold text-gray-900">1,755</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md p-6 card-hover">
+                    <div class="flex items-center">
+                        <div class="p-3 rounded-full bg-red-100">
+                            <i data-lucide="alert-triangle" class="w-6 h-6 text-red-600"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-600">Fake Detected</p>
+                            <p class="text-2xl font-bold text-gray-900">215</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md p-6 card-hover">
+                    <div class="flex items-center">
+                        <div class="p-3 rounded-full bg-green-100">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-green-600"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-600">Accuracy Rate</p>
+                            <p class="text-2xl font-bold text-gray-900">92%</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md p-6 card-hover">
+                    <div class="flex items-center">
+                        <div class="p-3 rounded-full bg-purple-100">
+                            <i data-lucide="image" class="w-6 h-6 text-purple-600"></i>
+                        </div>
+                        <div class="ml-4">
+                            <p class="text-sm font-medium text-gray-600">Images Analyzed</p>
+                            <p class="text-2xl font-bold text-gray-900">306</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Quick Actions</h3>
+                    <div class="space-y-3">
+                        <button class="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2">
+                            <i data-lucide="file-text" class="w-5 h-5"></i>
+                            <span>Analyze Text</span>
+                        </button>
+                        <button class="w-full bg-purple-600 text-white py-3 px-4 rounded-lg hover:bg-purple-700 transition-colors flex items-center justify-center space-x-2">
+                            <i data-lucide="image" class="w-5 h-5"></i>
+                            <span>Analyze Image</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md p-6">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Recent Activity</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                            <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                            <span class="text-sm text-gray-600">Fake news detected in article</span>
+                            <span class="text-xs text-gray-400 ml-auto">2 min ago</span>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                            <span class="text-sm text-gray-600">Real image verified</span>
+                            <span class="text-xs text-gray-400 ml-auto">5 min ago</span>
+                        </div>
+                        <div class="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                            <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                            <span class="text-sm text-gray-600">Deepfake detected in image</span>
+                            <span class="text-xs text-gray-400 ml-auto">8 min ago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Text Analysis Section -->
+        <section id="text" class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8">Text Analysis</h2>
+            
+            <div class="bg-white rounded-xl shadow-md p-8">
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Enter text to analyze:</label>
+                    <textarea 
+                        id="textInput"
+                        class="w-full h-32 p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                        placeholder="Paste your news article, social media post, or any text content here..."
+                    ></textarea>
+                </div>
+                
+                <div class="flex space-x-4">
+                    <button 
+                        onclick="analyzeText()"
+                        class="bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors flex items-center space-x-2"
+                    >
+                        <i data-lucide="search" class="w-5 h-5"></i>
+                        <span>Analyze Text</span>
+                    </button>
+                    <button 
+                        onclick="clearText()"
+                        class="bg-gray-500 text-white py-3 px-6 rounded-lg hover:bg-gray-600 transition-colors flex items-center space-x-2"
+                    >
+                        <i data-lucide="trash-2" class="w-5 h-5"></i>
+                        <span>Clear</span>
+                    </button>
+                </div>
+
+                <!-- Results Section -->
+                <div id="textResults" class="mt-8 hidden">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Analysis Results</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 rounded-lg p-6">
+                            <h4 class="font-semibold text-gray-800 mb-2">Detection Result</h4>
+                            <div id="detectionResult" class="text-lg font-bold"></div>
+                            <div id="confidenceScore" class="text-sm text-gray-600 mt-1"></div>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-6">
+                            <h4 class="font-semibold text-gray-800 mb-2">Explanation</h4>
+                            <div id="explanation" class="text-sm text-gray-700"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Image Analysis Section -->
+        <section id="image" class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-8">Image Analysis</h2>
+            
+            <div class="bg-white rounded-xl shadow-md p-8">
+                <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center">
+                    <i data-lucide="upload" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
+                    <p class="text-lg font-medium text-gray-700 mb-2">Upload an image to analyze</p>
+                    <p class="text-sm text-gray-500 mb-4">Drag and drop an image here, or click to select</p>
+                    <button class="bg-purple-600 text-white py-3 px-6 rounded-lg hover:bg-purple-700 transition-colors">
+                        Choose File
+                    </button>
+                </div>
+
+                <!-- Image Preview -->
+                <div id="imagePreview" class="mt-6 hidden">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Image Preview</h3>
+                    <div class="max-w-md">
+                        <img id="previewImg" class="w-full rounded-lg shadow-md" alt="Preview">
+                    </div>
+                </div>
+
+                <!-- Image Results -->
+                <div id="imageResults" class="mt-8 hidden">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Analysis Results</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 rounded-lg p-6">
+                            <h4 class="font-semibold text-gray-800 mb-2">Deepfake Detection</h4>
+                            <div id="imageDetectionResult" class="text-lg font-bold"></div>
+                            <div id="imageConfidenceScore" class="text-sm text-gray-600 mt-1"></div>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-6">
+                            <h4 class="font-semibold text-gray-800 mb-2">Analysis Details</h4>
+                            <div id="imageExplanation" class="text-sm text-gray-700"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 Fake News & Deepfake Detection System. Built with AI for a more informed world.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Text Analysis Function
+        function analyzeText() {
+            const text = document.getElementById('textInput').value;
+            if (!text.trim()) {
+                alert('Please enter some text to analyze');
+                return;
+            }
+
+            // Show loading state
+            const resultsDiv = document.getElementById('textResults');
+            resultsDiv.classList.remove('hidden');
+            
+            // Simulate API call (replace with actual API call)
+            setTimeout(() => {
+                const isFake = text.toLowerCase().includes('breaking') || 
+                              text.toLowerCase().includes('shocking') || 
+                              text.toLowerCase().includes('unbelievable');
+                
+                const confidence = isFake ? 0.95 : 0.85;
+                const explanation = isFake ? 
+                    'Text contains sensationalist language and suspicious indicators.' :
+                    'Text appears to be credible with balanced language.';
+                
+                document.getElementById('detectionResult').textContent = isFake ? 'FAKE DETECTED' : 'REAL CONTENT';
+                document.getElementById('detectionResult').className = isFake ? 'text-lg font-bold text-red-600' : 'text-lg font-bold text-green-600';
+                document.getElementById('confidenceScore').textContent = `Confidence: ${(confidence * 100).toFixed(1)}%`;
+                document.getElementById('explanation').textContent = explanation;
+            }, 1000);
+        }
+
+        function clearText() {
+            document.getElementById('textInput').value = '';
+            document.getElementById('textResults').classList.add('hidden');
+        }
+
+        // Add smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
