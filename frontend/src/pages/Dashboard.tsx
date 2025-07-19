@@ -66,12 +66,7 @@ const Dashboard: React.FC = () => {
   return (
     <div className="space-y-8">
       {/* Hero Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-center"
-      >
+      <div className="text-center">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">
           AI-Powered Fake News & Deepfake Detection
         </h1>
@@ -79,15 +74,10 @@ const Dashboard: React.FC = () => {
           Combat misinformation with our advanced machine learning system. 
           Analyze text and images with explainable AI insights.
         </p>
-      </motion.div>
+      </div>
 
       {/* Stats Grid */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-      >
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {stats.map((stat, index) => {
           const Icon = stat.icon;
           return (
@@ -105,14 +95,10 @@ const Dashboard: React.FC = () => {
             </div>
           );
         })}
-      </motion.div>
+      </div>
 
       {/* Quick Actions */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
+      <div>
         <h2 className="text-2xl font-bold text-gray-900 mb-6">Quick Actions</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {quickActions.map((action, index) => {
@@ -136,14 +122,10 @@ const Dashboard: React.FC = () => {
             );
           })}
         </div>
-      </motion.div>
+      </div>
 
       {/* Recent Activity */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-      >
+      <div>
         <h2 className="text-2xl font-bold text-gray-900 mb-6">Recent Activity</h2>
         <div className="card">
           <div className="space-y-4">
@@ -176,7 +158,7 @@ const Dashboard: React.FC = () => {
             ))}
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 };
