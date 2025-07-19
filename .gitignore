@@ -69,9 +69,16 @@ build/
 # Data
 data/
 *.csv
-*.json
 *.parquet
 *.hdf5
+
+# JSON files (but allow package.json)
+*.json
+!package.json
+!package-lock.json
+!tsconfig.json
+!tailwind.config.js
+!postcss.config.js
 
 # Logs
 logs/
